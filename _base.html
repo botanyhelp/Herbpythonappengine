@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+   <title>Herbarium</title>
+ </head>
+ <body>
+   <div id="header">
+      <h1>Herbarium</h1>
+   </div>
+{% if user %} 
+   <p> Welcome, {{ user.email() }}! 
+   You can <a href="{{ logout_url }}">sign out</a>. 
+   </p> 
+{% else %} 
+   <p> Welcome! <a href="{{ login_url }}">Sign in</a> 
+   </p> 
+{% endif %}
+   <div id="bodycontent">
+      {% block bodycontent %}
+           Replace this
+      {% endblock %}
+   </div>
+ </body>
+</html>
